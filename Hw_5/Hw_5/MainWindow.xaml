@@ -1,0 +1,49 @@
+﻿<Window x:Class="Hw_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hw_5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="410.8" Width="648">
+    <Grid Margin="0,0,4,0.4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="89*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" Margin="29.6,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1"><Run FontSize="22" Text="Уже "/></TextBlock>
+        <TextBox x:Name="ch_day" HorizontalAlignment="Left" Height="29" Margin="68.6,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" FontSize="20" Grid.Column="1" Visibility="Hidden" Cursor="Pen"/>
+        <TextBox x:Name="ch_year" HorizontalAlignment="Left" Height="29" Margin="293.6,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" FontSize="20" Grid.Column="1" Visibility="Hidden" Cursor="Pen"/>
+        <Button x:Name="btm_ch" Content="Изменить" HorizontalAlignment="Left" Margin="425.6,295,0,0" VerticalAlignment="Top" Width="130" Click="Button_Click" RenderTransformOrigin="0.496,0.51" FontSize="20" Height="46" Grid.Column="1" Cursor="Hand">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF0981C" Offset="0"/>
+                    <GradientStop Color="#FFFFEFB6" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
+        <ComboBox x:Name="ch_month" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="142.6,132,0,0" Height="29" Grid.Column="1" Visibility="Hidden" Cursor="Hand" SelectedIndex="0">
+            <ComboBoxItem x:Name="_01" Content="Январь"/>
+            <ComboBoxItem x:Name="_02" Content="Февраль"/>
+            <ComboBoxItem x:Name="_03" Content="Март"/>
+            <ComboBoxItem x:Name="_04" Content="Апрель"/>
+            <ComboBoxItem x:Name="_05" Content="Май"/>
+            <ComboBoxItem x:Name="_06" Content="Июнь"/>
+            <ComboBoxItem x:Name="_07" Content="Июль"/>
+            <ComboBoxItem x:Name="_08" Content="Август"/>
+            <ComboBoxItem x:Name="_09" Content="Сентябрь"/>
+            <ComboBoxItem x:Name="_10" Content="Октябрь"/>
+            <ComboBoxItem x:Name="_11" Content="Ноябрь"/>
+            <ComboBoxItem x:Name="_12" Content="Декабрь"/>
+        </ComboBox>
+        <TextBox x:Name="txt_OutPut" HorizontalAlignment="Left" Height="43" Margin="89.6,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" IsReadOnlyCaretVisible="True" FontSize="20" BorderBrush="White" Grid.Column="1" Background="White">
+            <TextBox.SelectionBrush>
+                <ImageBrush/>
+            </TextBox.SelectionBrush>
+        </TextBox>
+        <Button x:Name="btm_save" Content="Сохранить" HorizontalAlignment="Left" Margin="425.6,311,0,0" VerticalAlignment="Top" Width="130" Click="Button_Click_1" IsEnabled="False" FontSize="20" Height="46" Grid.Column="1" Visibility="Hidden"/>
+        <TextBlock HorizontalAlignment="Left" Margin="306.6,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" Width="200" FontSize="20" Grid.Column="1"><Run Text="а"/><Run Text=" я все ещё учу "/><Run Text="C#"/></TextBlock>
+        <Image Margin="0,216,321.6,0.2" Source="Все ещё.jpg" Stretch="Fill" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>
