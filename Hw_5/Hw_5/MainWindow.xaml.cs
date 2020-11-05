@@ -150,6 +150,9 @@ namespace Hw_5
             Time date = new Time (today.Day, today.Month, today.Year);
             txt_OutPut.Text = date.ToString();
             txt_OutPut.IsReadOnly = true;
+            ch_month.SelectedIndex = today.Month - 1;
+            ch_day.Text = $"{today.Day}";
+            ch_year.Text = $"{today.Year}";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

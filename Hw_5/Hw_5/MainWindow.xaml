@@ -23,7 +23,7 @@
             </Button.Background>
         </Button>
         <ComboBox x:Name="ch_month" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="142.6,132,0,0" Height="29" Grid.Column="1" Visibility="Hidden" Cursor="Hand" SelectedIndex="0">
-            <ComboBoxItem x:Name="_01" Content="Январь"/>
+            <ComboBoxItem Content="Январь"/>
             <ComboBoxItem x:Name="_02" Content="Февраль"/>
             <ComboBoxItem x:Name="_03" Content="Март"/>
             <ComboBoxItem x:Name="_04" Content="Апрель"/>
@@ -41,7 +41,14 @@
                 <ImageBrush/>
             </TextBox.SelectionBrush>
         </TextBox>
-        <Button x:Name="btm_save" Content="Сохранить" HorizontalAlignment="Left" Margin="425.6,311,0,0" VerticalAlignment="Top" Width="130" Click="Button_Click_1" IsEnabled="False" FontSize="20" Height="46" Grid.Column="1" Visibility="Hidden"/>
+        <Button x:Name="btm_save" Content="Сохранить" HorizontalAlignment="Left" Margin="425.6,295,0,0" VerticalAlignment="Top" Width="130" Click="Button_Click_1" IsEnabled="False" FontSize="20" Height="46" Grid.Column="1" Visibility="Hidden">
+            <Button.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FFF0981C" Offset="0"/>
+                    <GradientStop Color="#FFFFEFB6" Offset="1"/>
+                </RadialGradientBrush>
+            </Button.Background>
+        </Button>
         <TextBlock HorizontalAlignment="Left" Margin="306.6,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="44" Width="200" FontSize="20" Grid.Column="1"><Run Text="а"/><Run Text=" я все ещё учу "/><Run Text="C#"/></TextBlock>
         <Image Margin="0,216,321.6,0.2" Source="Все ещё.jpg" Stretch="Fill" Grid.ColumnSpan="2"/>
 
