@@ -125,6 +125,8 @@ namespace Hw_5
 
     public partial class MainWindow : Window
     {
+        DateTime today = DateTime.Now;
+        Time date;
 
         static int Check(string str, ref int k)  //Проверка на число
             {
@@ -144,10 +146,8 @@ namespace Hw_5
         public MainWindow()
         {
             InitializeComponent();
-
-            DateTime today = new DateTime();
-            today = DateTime.Now;
-            Time date = new Time (today.Day, today.Month, today.Year);
+            
+            date = new Time (today.Day, today.Month, today.Year);
             txt_OutPut.Text = date.ToString();
             txt_OutPut.IsReadOnly = true;
             ch_month.SelectedIndex = today.Month - 1;
@@ -166,6 +166,9 @@ namespace Hw_5
             btm_save.IsEnabled = true;
             btm_ch.Visibility = Visibility.Hidden;
             btm_save.Visibility = Visibility.Visible;
+
+            ch_day.Text = $"{date.day}";
+            ch_year.Text = $"{date.year}";
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -177,18 +180,23 @@ namespace Hw_5
                 y = Check(str_y, ref k),
                 m = ch_month.SelectedIndex + 1;
             
-                Time new_date = new Time(d, m, y);
-
+              date = new Time(d, m, y);
+            if(date.day == 0)
+                date.day = today.Day;
+            if (date.year == 0)
+                date.year = today.Year;
+            
                 txt_OutPut.Visibility = Visibility.Visible;
                 ch_month.Visibility = Visibility.Hidden;
                 ch_day.Visibility = Visibility.Hidden;
                 ch_year.Visibility = Visibility.Hidden;
-                txt_OutPut.Text = new_date.ToString();
+                txt_OutPut.Text = date.ToString();
 
             btm_ch.IsEnabled = true;
             btm_save.IsEnabled = false;
             btm_save.Visibility = Visibility.Hidden;
             btm_ch.Visibility = Visibility.Visible;
         }
+        
     }
 }
